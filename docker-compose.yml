@@ -1,0 +1,9 @@
+services:
+  web:
+    # IMAGE is set by the CD job; locally it falls back to building from source
+    image: ${IMAGE:-spa-demo}:latest
+    build: .
+    container_name: spa-demo
+    ports:
+      - "3000:3000"
+    restart: unless-stopped

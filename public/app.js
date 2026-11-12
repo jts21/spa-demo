@@ -2,7 +2,7 @@ const app = document.getElementById('app');
 
 const views = {
   '/': () => {
-    app.innerHTML = `<h1 data-test="page-title">Home Page</h1><p>A simple single page app served by Express.</p>`;
+    app.innerHTML = `<h1 data-test="page-title">Home</h1><p>A simple single page app served by Express.</p>`;
   },
   '/about': () => {
     app.innerHTML = `<h1 data-test="page-title">About</h1><p>Built with Node.js, Docker and GitHub Actions.</p>`;

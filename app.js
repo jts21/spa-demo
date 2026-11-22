@@ -17,11 +17,29 @@ app.post('/api/tasks', (req, res) => {
   if (!title) return res.status(400).json({ error: 'title is required' });
   const task = { id: nextId++, title };
   tasks.push(task);
+
+  console.info(JSON.stringify({
+    event: 'task.created',
+    taskId: task.id,
+    timestamp: new Date().toISOString()
+  }));
+  
   res.status(201).json(task);
 });
 
 app.delete('/api/tasks/:id', (req, res) => {
+  const id = Number(req.params.id);
+  const task = tasks.find(t => t.id === id);
   tasks = tasks.filter(t => t.id !== Number(req.params.id));
+
+  if (task) {
+    console.info(JSON.stringify({
+      event: 'task.deleted',
+      taskId: id,
+      timestamp: new Date().toISOString()
+    }));
+  }
+
   res.status(204).end();
 });
 

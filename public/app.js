@@ -2,7 +2,7 @@ const app = document.getElementById('app');
 
 const views = {
   '/': () => {
-    app.innerHTML = `<h1 data-test="page-title">Home</h1><p>A simple single page app served by Express. Codes are developing from local machine then push the changes to main branch in GitHub. GitHub Action starts test -> build-and-push -> deploy-local. Local server must be up and running. </p>`;
+    app.innerHTML = `<h1 data-test="page-title">Home</h1><p>A simple single page app served by Express. Codes are developing from local machine then push the changes to main branch in GitHub. GitHub Action starts test -> build-and-push -> deploy-local. Local server must be up and running. More to come ...</p>`;
   },
   '/about': () => {
     app.innerHTML = `<h1 data-test="page-title">About</h1><p>Built with Node.js, Docker and GitHub Actions.</p>`;
